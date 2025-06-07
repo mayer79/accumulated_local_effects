@@ -10,9 +10,7 @@ Differences:
 - It supports case weights.
 - It returns standard deviations of local effects. This is useful to assess presence/strength of interaction effects. Furthermore, by dividing by root bin size, it provides a measure of estimation accuracy.
 
-See the [example](example.ipynb).
-
-See the [example](example.ipynb) for this code:
+See the [example](example.ipynb) with this code:
 
 ## Example
 
