@@ -37,15 +37,9 @@ fig, axes = plt.subplots(2, 2, figsize=(6, 6))
 
 for feature, ax in zip(top_m, axes.flatten()):
     ale = accumulated_local_effects(X, est.predict, feature=feature)
-
-    # Plot the main ALE line
     ax.plot(ale["breaks"], ale["ale"], "b-", label="ALE")
-
-    # Calculate confidence intervals (e.g., using 1 standard deviation)
     standard_errors = ale["standard_deviations"] / np.sqrt(ale["bin_sizes"])
     upper, lower = (ale["ale"] + ind * standard_errors for ind in (1, -1))
-
-    # Add shaded area for error bounds
     ax.fill_between(ale["breaks"], lower, upper, alpha=0.2, color="blue", label="±1 se")
     ax.set_title(f"{feature}")
 
